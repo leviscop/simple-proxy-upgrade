@@ -8,7 +8,8 @@ A very simple container to proxy HTTP traffic to another server, based on `nginx
 
 - `FORWARD_HOST` - domain of the proxied website, eg. `www.example.com`
 - `FORWARD_PORT` - port of the prixied website, eg. `80`
-- `FORWARD_PROT` - protocol to use for the proxied website, `http` or `https` 
+- `FORWARD_PROT` - protocol to use for the proxied website, `http` or `https`
+- `FORWARD_DOMAIN` - optionally define a domain to use for the forward request 
 - `DNS` - optionally define a nameserver for domain lookup
 - `PROXY_READ_TIMEOUT` - optionally set a timeout (default 10 minutes)
 
