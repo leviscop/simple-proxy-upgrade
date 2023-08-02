@@ -83,7 +83,7 @@ RUN echo '#!/bin/sh'                                                            
 	echo 'echo "      proxy_set_header     X-Forwarded-For \$proxy_add_x_forwarded_for;"     >> default.conf' >> /entrypoint/primer.sh && \
 	echo 'echo "      proxy_set_header     Upgrade \$http_upgrade;"                          >> default.conf' >> /entrypoint/primer.sh && \
 	echo 'echo "      proxy_set_header     Connection \$connection_upgrade;"                 >> default.conf' >> /entrypoint/primer.sh && \
-  	echo 'echo "      proxy_set_header     Host ${FORWARD_DOMAIN};"                          >> default.conf' >> /entrypoint/primer.sh && \
+  	echo 'echo "      proxy_set_header     Host ${FORWARD_DOMAIN:=\$host};"                  >> default.conf' >> /entrypoint/primer.sh && \
 	echo 'echo ""                                                                            >> default.conf' >> /entrypoint/primer.sh && \
 	echo 'echo "      client_max_body_size ${MAX_BODY_SIZE};"                                >> default.conf' >> /entrypoint/primer.sh && \
 	echo 'echo "      client_body_buffer_size ${MAX_BUFFER_SIZE};"                           >> default.conf' >> /entrypoint/primer.sh && \
