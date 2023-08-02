@@ -9,7 +9,7 @@ MAINTAINER      Leviscop <git@leviscop.dev>
 RUN mkdir /entrypoint;
 
 # Port to expose, this is currently fixed to 80
-EXPOSE 80
+EXPOSE 8080
 
 #
 # Server host to make request to, 
@@ -68,7 +68,7 @@ RUN echo '#!/bin/sh'                                                            
 	echo 'echo "}"                                                                           >> default.conf' >> /entrypoint/primer.sh && \
 	echo 'echo ""                                                                            >> default.conf' >> /entrypoint/primer.sh && \
 	echo 'echo "server {"                                                                    >> default.conf' >> /entrypoint/primer.sh && \
-	echo 'echo "   listen 80 default_server;"                                                >> default.conf' >> /entrypoint/primer.sh && \
+	echo 'echo "   listen 8080 default_server;"                                              >> default.conf' >> /entrypoint/primer.sh && \
 	echo 'echo "   client_max_body_size ${MAX_BODY_SIZE};"                                   >> default.conf' >> /entrypoint/primer.sh && \
 	echo 'echo ""                                                                            >> default.conf' >> /entrypoint/primer.sh && \
 	echo 'echo "   location / {"                                                             >> default.conf' >> /entrypoint/primer.sh && \
